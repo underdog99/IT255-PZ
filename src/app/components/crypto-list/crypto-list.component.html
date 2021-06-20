@@ -1,0 +1,42 @@
+<h1 align="center">Crypto List</h1>
+<hr>
+<div class="container" align="center">
+    <div class="form-inline">
+        <input class="form-control" type="text" id="search-text" placeholder="search... 'bitcoin' "
+            [(ngModel)]="searchTerm" (input)="search($event.target.value)">
+    </div>
+    <br>
+    <table class="table table-responsive table-hover table-striped">
+        <thead class="bg-primary text-white">
+            <tr>
+            <th scope="col">Rang</th>
+            <th scope="col">Info</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price(USD)</th>
+            <th scope="col">Market Cap(USD)</th>
+            <th scope="col">Fully diluted Val</th>
+            <th scope="col">Total volume(USD)</th>
+            <th scope="col">Price change 24h(%)</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let c of cryptoList | filterPipe: searchTerm; index as i">
+                    <td>{{c.market_cap_rank}}</td>
+                    <td><button type="button" class="btn btn-primary" [routerLink]="['/cryptoInfo', c.id]">View</button></td>
+                    <td>{{c.symbol}}</td>
+                    <td>{{c.name}}</td>
+                    <td [ngStyle]="{color: 'blue'}">
+                        {{c.current_price}}
+                    </td>
+                    <td>{{c.market_cap}}</td>
+                    <td>{{c.fully_diluted_valuation}}</td>
+                    <td>{{c.total_volume}}</td>
+                    <td [ngStyle]="{color: colorForProc(c)}">
+                        {{c.price_change_percentage_24h}}
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+

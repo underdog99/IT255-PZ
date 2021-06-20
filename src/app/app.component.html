@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav"> 
+  <a class="navbar-brand" href="#">IT255-PZ1</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cryptoList']">Crypto List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cryptoRec']">Crypto Recomm</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cryptoNews']">Crypto News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<style>
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+<br>
+<br>
+<footer class="bg-primary text-white text-center text-lg-start">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-dark" href="#">IT255-PZ-MladenSimeonovic-3668</a>
+  </div>
+</footer>

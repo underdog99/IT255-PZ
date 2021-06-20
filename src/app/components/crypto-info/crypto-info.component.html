@@ -1,0 +1,30 @@
+<h1 align="center">Coin Info</h1>
+<hr>
+<div class="container" align="center">
+    <table class="table table-striped" *ngFor="let coin of cryptoInfo">
+        <tr>
+            <th>Name:</th>
+            <td>{{coin.name}}</td>
+        </tr>
+        <tr>
+            <th>Symbol:</th>
+            <td>{{coin.symbol}}</td>
+        </tr>
+        <tr>
+            <th>Block time in minutes:</th>
+            <td>{{coin.block_time_in_minutes}}</td>
+        </tr>
+        <tr>
+            <th>Hashing algorithm:</th>
+            <td>{{coin.hashing_algorithm}}</td>
+        </tr>
+        <tr>
+            <th>Public notice:</th>
+            <td>{{coin.public_notice}}</td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td>{{coin.description.en}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,34 @@
+<h1 align="center">Crypto Recommended</h1>
+<hr>
+<div class="container" align="center">
+    <table class="table table-responsive table-hover table-striped">
+        <thead class="bg-primary text-white">
+            <tr>
+            <th scope="col">Rang</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price(USD)</th>
+            <th scope="col">Market Cap(USD)</th>
+            <th scope="col">Fully diluted Val</th>
+            <th scope="col">Total volume(USD)</th>
+            <th scope="col">Price change 24h(%)</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let c of cryptoRecList">
+                <td>{{c.market_cap_rank}}</td>
+                <td>{{c.symbol}}</td>
+                <td>{{c.name}}</td>
+                <td [ngStyle]="{color: 'blue'}">
+                    {{c.current_price}}
+                </td>
+                <td>{{c.market_cap}}</td>
+                <td>{{c.fully_diluted_valuation}}</td>
+                <td>{{c.total_volume}}</td>
+                <td> 
+                    {{c.price_change_percentage_24h}}
+                </td>
+                </tr>
+        </tbody>
+    </table>
+</div>

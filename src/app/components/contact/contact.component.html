@@ -1,0 +1,74 @@
+<h1 align="center">Contact</h1>
+<hr>
+<div class="container" align="center">
+    <section class="mb-4">
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+            a matter of hours to help you.</p>
+        <div class="row">
+            <div class="col-md-9 mb-md-0 mb-5">
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" [class.error]="!myForm.valid">
+                    <div *ngIf="!myForm.controls['from'].valid">
+                        <p>Please input your e-mail address!</p>
+                    </div>
+                    <div *ngIf="!myForm.controls['name'].valid && !myForm.controls['subject'].valid && !myForm.controls['body'].valid">
+                        <p>Form is required!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="fromInput" placeholder="From" [formControl]="myForm.controls['from']" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <input type="text" id="nameInput" placeholder="Name" [formControl]="myForm.controls['name']" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <input type="text" id="subjectInput" placeholder="Subject" [formControl]="myForm.controls['subject']" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <textarea type="text" name="body" id="bodyInput" rows="5" placeholder="Your message..." class="form-control md-textarea" [formControl]="myForm.controls['body']"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center text-md-left">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+            
+            <div class="col-md-3 text-center">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                        <p>Brace Ivkovica b.b., Kucevo 12240, Serbia</p>
+                    </li>
+
+                    <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                        <p>+ 381 63 111 222</p>
+                    </li>
+
+                    <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                        <p>contact@email.com</p>
+                    </li>
+                </ul>
+            </div>
+            
+
+        </div>
+
+    </section>
+
+</div>
+

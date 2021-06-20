@@ -1,0 +1,21 @@
+<h1 align="center">Crypto News (Update)</h1>
+<hr>
+<div class="container" align="center">
+    <table class="table table-responsive table-hover table-striped">
+        <thead class="bg-primary text-white"> 
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                <th scope="col">Created at</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of cryptoUpdate; index as i">
+                <td>{{i + 1}}</td>
+                <td>{{n.category}}</td>
+                <td>{{n.created_at}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
